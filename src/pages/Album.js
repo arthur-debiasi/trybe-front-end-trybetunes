@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import uuid from 'react-uuid';
+import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import MusicCard from '../components/MusicCard';
 import getMusics from '../services/musicsAPI';
 
 export default class Album extends Component {
   state = {
-    albumData: [],
     albumCollection: {},
     albumTracks: [],
   };
@@ -39,3 +39,9 @@ export default class Album extends Component {
     );
   }
 }
+
+Album.propTypes = {
+  match: PropTypes.object,
+  params: PropTypes.object,
+  id: PropTypes.string,
+}.isRequired;
