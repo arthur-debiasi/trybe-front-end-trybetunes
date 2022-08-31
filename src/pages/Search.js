@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import uuid from 'react-uuid';
 import ArtistCard from '../components/ArtistCard';
 import Header from '../components/Header';
@@ -35,13 +36,18 @@ export default class Search extends Component {
       return <p>Nenhum álbum foi encontrado</p>;
     }
     return response
-      .map(({ collectionName, artworkUrl100, artistName }) => (
-        <ArtistCard
+      .map(({ collectionName, artworkUrl100, artistName, collectionId }) => (
+        <Link
           key={ uuid() }
-          collectionName={ collectionName }
-          artworkUrl100={ artworkUrl100 }
-          artistName={ artistName }
-        />
+          to={ `/album/${collectionId}` }
+          data-testid={ `link-to-album-${collectionId}` }
+        >
+          <ArtistCard
+            collectionName={ collectionName }
+            artworkUrl100={ artworkUrl100 }
+            artistName={ artistName }
+          />
+        </Link>
       ));
   };
 
