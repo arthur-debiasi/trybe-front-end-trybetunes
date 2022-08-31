@@ -83,7 +83,7 @@ export default class Search extends Component {
     return (
       <div data-testid="page-search">
         <Header />
-        { !isLoading ? formConditional : null }
+        { !isLoading && formConditional }
         { isLoading && <Loading /> }
         { isLoaded && !isLoading && isFound && searchTitle }
         { isLoaded && this.artistCard(response) }
