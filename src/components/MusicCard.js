@@ -14,7 +14,7 @@ export default class MusicCard extends Component {
   };
 
   render() {
-    const { trackName, previewUrl, trackId } = this.props;
+    const { trackName, previewUrl, trackId, checked } = this.props;
     const { isLoading } = this.state;
     return (
       <div>
@@ -34,6 +34,7 @@ export default class MusicCard extends Component {
             data-testid={ `checkbox-music-${trackId}` }
             id={ `checkbox-music-${trackId}` }
             onChange={ this.handleChange }
+            checked={ checked }
           />
           <span>{isLoading && <Loading />}</span>
         </label>
