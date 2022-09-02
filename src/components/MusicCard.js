@@ -1,21 +1,36 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { addSong } from '../services/favoriteSongsAPI';
+import { addSong, removeSong } from '../services/favoriteSongsAPI';
 import Loading from './Loading';
 
 export default class MusicCard extends Component {
-  state = { isLoading: false };
+  state = { isLoading: false, checked: false };
+
+  componentDidMount() {
+    this.checkedValidation();
+  }
+
+  checkedValidation = () => {
+    const { favoriteSongs, object } = this.props;
+    const checkedSong = favoriteSongs.some(({ trackId }) => trackId === object.trackId);
+    this.setState({ checked: checkedSong });
+  };
 
   handleChange = async () => {
-    const { object } = this.props;
+    const { object, checked } = this.props;
     this.setState({ isLoading: true });
     await addSong(object);
-    this.setState({ isLoading: false });
+    this.setState({ isLoading: false, checked: true });
+    if (checked === 'on') {
+      this.setState({ isLoading: true });
+      await removeSong(object);
+      this.setState({ isLoading: false, checked: false });
+    }
   };
 
   render() {
-    const { trackName, previewUrl, trackId, checked } = this.props;
-    const { isLoading } = this.state;
+    const { trackName, previewUrl, trackId } = this.props;
+    const { isLoading, checked } = this.state;
     return (
       <div>
         <h5>{ trackName }</h5>
