@@ -17,14 +17,17 @@ export default class MusicCard extends Component {
   };
 
   handleChange = async () => {
-    const { object, checked } = this.props;
-    this.setState({ isLoading: true });
-    await addSong(object);
-    this.setState({ isLoading: false, checked: true });
-    if (checked === 'on') {
+    const { object } = this.props;
+    const { checked } = this.state;
+    if (checked) {
       this.setState({ isLoading: true });
       await removeSong(object);
       this.setState({ isLoading: false, checked: false });
+    } else {
+      this.setState({ isLoading: true });
+      await addSong(object);
+      this.setState({ isLoading: false, checked: true });
+      console.log();
     }
   };
 
