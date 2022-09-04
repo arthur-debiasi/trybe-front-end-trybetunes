@@ -60,7 +60,7 @@ export default class Search extends Component {
       searchedArtist } = this.state;
     const isFound = response.length > 0;
     const searchTitle = <p>{`Resultado de álbuns de: ${searchedArtist}`}</p>;
-    const formConditional = (
+    const searchForm = (
       <form>
         <input
           type="text"
@@ -83,7 +83,7 @@ export default class Search extends Component {
     return (
       <div data-testid="page-search">
         <Header />
-        { !isLoading && formConditional }
+        { !isLoading && searchForm }
         { isLoading && <Loading /> }
         { isLoaded && !isLoading && isFound && searchTitle }
         { isLoaded && this.artistCard(response) }
