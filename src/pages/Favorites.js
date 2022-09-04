@@ -8,7 +8,6 @@ import MusicCard from '../components/MusicCard';
 export default class Favorites extends Component {
   state = {
     isLoading: false,
-    isLoaded: false,
     favoriteSongs: [],
   };
 
@@ -29,11 +28,11 @@ export default class Favorites extends Component {
   handleFavoriteSongs = async () => {
     this.setState({ isLoading: true });
     const favoriteSongs = await getFavoriteSongs();
-    this.setState({ favoriteSongs, isLoading: false, isLoaded: true });
+    this.setState({ favoriteSongs, isLoading: false });
   };
 
   render() {
-    const { isLoading, favoriteSongs, isLoaded } = this.state;
+    const { isLoading, favoriteSongs } = this.state;
     const musicCard = favoriteSongs.map((e) => (
       <MusicCard
         key={ e.trackId }
