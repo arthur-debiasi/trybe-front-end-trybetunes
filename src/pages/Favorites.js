@@ -15,15 +15,20 @@ export default class Favorites extends Component {
     this.handleFavoriteSongs();
   }
 
-  async shouldComponentUpdate(_, nextState) {
-    const { favoriteSongs } = this.state;
-    return favoriteSongs !== nextState.favoriteSongs;
-  }
+  // async shouldComponentUpdate(_, nextState) {
+  //   const { favoriteSongs } = this.state;
+  //   return favoriteSongs !== nextState.favoriteSongs;
+  // }
 
-  async componentDidUpdate() {
-    const favoriteSongs = await getFavoriteSongs();
+  // async componentDidUpdate() {
+  //   const favoriteSongs = await getFavoriteSongs();
+  //   this.setState({ favoriteSongs });
+  // }
+
+  updateFavoriteSongs = async () => {
+    const favoriteSongs = await getFavoriteSongs(); // refatorei meu código para que não precisasse mais utilizar o componentDidUpdate como recurso de atualizar a página, fiz a função updateFavoriteSongs para que o MusicCard fizesse a atualização do state do Componente Favorites automagicamente. :rocket:
     this.setState({ favoriteSongs });
-  }
+  };
 
   handleFavoriteSongs = async () => {
     this.setState({ isLoading: true });
@@ -41,6 +46,7 @@ export default class Favorites extends Component {
         trackId={ e.trackId }
         object={ e }
         favoriteSongs={ favoriteSongs }
+        updateFavoriteSongs={ this.updateFavoriteSongs }
       />
     ));
     return (
