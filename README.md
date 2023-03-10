@@ -14,7 +14,7 @@ These are the implemented features avaliable for users:
 
 ## 🚀 Built With
 
-> [![Javascript][Javascript]][Javascript-url][![React][React.js]][React-url]
+> [![Javascript][Javascript]][Javascript-url][![React][React.js]][React-url][![React Router][ReactRouter]][ReactRouter-url]
 
 
 ## 📌 Skills
@@ -56,6 +56,8 @@ Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais
 [Javascript-url]: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
+[ReactRouter]: https://img.shields.io/badge/React_Router-20232A?style=for-the-badge&logo=reactrouter&logoColor=CA4245
+[ReactRouter-url]: https://reactrouter.com/en/main
 [MUI]: https://img.shields.io/badge/material_ui-007FFF?style=for-the-badge&logo=mui&logoColor=white
 [MUI-url]: https://img.shields.io/badge/material_ui-007FFF?style=for-the-badge&logo=mui&logoColor=white
 
