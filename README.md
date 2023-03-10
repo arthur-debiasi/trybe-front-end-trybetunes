@@ -1,26 +1,28 @@
-# [Trybe](https://www.betrybe.com/) Project - [Tryunfo](deploy).
+# [Trybe](https://www.betrybe.com/) Project - [Trybetunes](deploy).
 
 ## 💻 Project
-A Top Trumps like game app built with React. A user is able to:
+Music streaming application made with React, using component lifecycle methods and React Router.
+These are the implemented features avaliable for users:
 
-- Create a deck with custom theme;
-- Add and remove a card from the deck;
-- View all cards that have been added to the deck;
-- Play with the created deck. :construction:
+- Login;
+- Search for a band or artist;
+- List available albums by band or artist;
+- Play preview songs from a selected album;
+- Favorite and unfavorite songs;
+- View the list of favorite songs;
+- View and edit the logged-in person's profile.
 
 ## 🚀 Built With
 
-> [![Javascript][Javascript]][Javascript-url][![React][React.js]][React-url][![MUI][MUI]][MUI-url]
+> [![Javascript][Javascript]][Javascript-url][![React][React.js]][React-url]
 
 
 ## 📌 Skills
 
-- Read a component's state and use it to change what is displayed in the browser;
-- Initialize a component with a predefined state;
-- Update the state of a component;
-- Capture events using React syntax;
-- Create forms using JSX syntax with tags: input, textarea, select, form, checkbox;
-- Pass information from child components to parent components via callbacks;
+- Make requests and consume data from an API;
+- Use the lifecycles of a React component;
+- Create routes with React Router, using the BrowserRouter, Switch, Route, Redirect and Link components;
+- Use the setState function to ensure that a given code is only executed after the state is updated.
 
 ## Getting Started
 
